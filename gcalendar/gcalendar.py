@@ -127,6 +127,10 @@ class GCalendar:
                     calendar_event["location"] = event["location"]
                 else:
                     calendar_event["location"] = ""
+                if "description" in event:
+                    calendar_event["description"] = event["description"]
+                else:
+                    calendar_event["description"] = ""
                 retrieved_events.append(calendar_event)
             page_token = events.get("nextPageToken")
             if not page_token:
